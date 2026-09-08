@@ -8,16 +8,26 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
-    public float speed = 0;
+
+    [Header ("References")]
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject doorObject;
     public GameObject door2Object;
     public GameObject door3Object;
+    public GameObject Explosion;
+    
+    [Header ("Sounds")]
     public AudioClip pickupSound;
+    public AudioClip BombJump;
+    public AudioClip Boom;
+    public AudioClip Dash;
     private AudioSource audioSource;
+    
+    [Header ("Stats")]
+    public float speed = 0;
     public float jumpForce = 5f;
-    public float dashSpeed = 20f;
+    public float dashSpeed = 10f;
     private bool isGrounded;
 
     void Start()
@@ -41,6 +51,8 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            audioSource.PlayOneShot(BombJump);
+
         }
     }
     private void OnCollisionStay(Collision collision)
@@ -56,6 +68,18 @@ public class PlayerController : MonoBehaviour
         Vector3 dashDirection = new Vector3(movementX, 0, movementY).normalized;
         if (dashDirection == Vector3.zero) dashDirection = transform.forward;
         rb.AddForce(dashDirection * dashSpeed, ForceMode.Impulse);
+        audioSource.PlayOneShot(Dash);
+    }
+
+    void OnExplode()
+    {
+        Debug.Log("BOOM");
+        audioSource.PlayOneShot(Boom);
+        Instantiate(Explosion, new Vector3(
+            parent.transform.position.x,
+            parent.transform.position.y,
+            parent.transform.position.z)
+            );
     }
 
     void SetCountText()

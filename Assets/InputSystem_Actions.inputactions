@@ -28,7 +28,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -73,7 +73,7 @@
                     "name": "Next",
                     "type": "Button",
                     "id": "b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -100,6 +100,15 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "363a7b9a-cba6-45c6-a0ed-6d0820a60916",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Explode",
+                    "type": "Button",
+                    "id": "f0e1f0f6-2353-4d9a-be2c-7c0319641f21",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -489,6 +498,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0e6e7b7-38f1-4779-a12f-9d3fa91588f8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Explode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

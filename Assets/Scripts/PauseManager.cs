@@ -5,18 +5,15 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseMenu;
     private bool isPaused = false;
 
-    void Update()
+    void OnPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (isPaused)
         {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
         }
     }
 

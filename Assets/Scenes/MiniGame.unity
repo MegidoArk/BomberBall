@@ -976,6 +976,7 @@ GameObject:
   - component: {fileID: 268083153}
   - component: {fileID: 268083152}
   - component: {fileID: 268083151}
+  - component: {fileID: 268083154}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -1034,6 +1035,33 @@ Transform:
   - {fileID: 2142699034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &268083154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268083150}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &287507828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2303,7 @@ GameObject:
   - component: {fileID: 679428709}
   - component: {fileID: 679428708}
   - component: {fileID: 679428707}
+  - component: {fileID: 679428710}
   m_Layer: 0
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -2333,6 +2362,33 @@ Transform:
   - {fileID: 1155182592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &679428710
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679428706}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &692353946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1434314491012208819, guid: 41c0c1d884d1c294183d4df0f83dac6e, type: 3}
@@ -5223,6 +5279,7 @@ MonoBehaviour:
   door2Object: {fileID: 883153143}
   door3Object: {fileID: 1887502056}
   Explosion: {fileID: 4616958767953074512, guid: 6aeb54eb4c226c5449913aa31a6579bb, type: 3}
+  parentTransform: {fileID: 1307097588}
   pickupSound: {fileID: 8300000, guid: 7f23bb2eb4361bb4f9fc2db92af458ed, type: 3}
   BombJump: {fileID: 8300000, guid: 7e3eb8fa8526ee440898507bdeda5d20, type: 3}
   Boom: {fileID: 8300000, guid: f1bf312ada35a544dab1ced54f5aee2b, type: 3}
@@ -6881,6 +6938,7 @@ GameObject:
   - component: {fileID: 1559755611}
   - component: {fileID: 1559755610}
   - component: {fileID: 1559755609}
+  - component: {fileID: 1559755612}
   m_Layer: 0
   m_Name: Enemy (3)
   m_TagString: Untagged
@@ -6939,6 +6997,33 @@ Transform:
   - {fileID: 555784473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1559755612
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559755608}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1575626464
 GameObject:
   m_ObjectHideFlags: 0
@@ -8736,6 +8821,7 @@ GameObject:
   - component: {fileID: 1891361158}
   - component: {fileID: 1891361160}
   - component: {fileID: 1891361159}
+  - component: {fileID: 1891361161}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -8794,6 +8880,33 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1891361161
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891361157}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1907435980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5952375255658232172, guid: 2f23154a359e2aa41acba58591c4a222, type: 3}

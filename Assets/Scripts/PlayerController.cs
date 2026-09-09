@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject door2Object;
     public GameObject door3Object;
     public GameObject Explosion;
+    public Transform parentTransform;
     
     [Header ("Sounds")]
     public AudioClip pickupSound;
@@ -75,11 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("BOOM");
         audioSource.PlayOneShot(Boom);
-        Instantiate(Explosion, new Vector3(
-            parent.transform.position.x,
-            parent.transform.position.y,
-            parent.transform.position.z)
-            );
+        Instantiate(Explosion, parentTransform.position, parentTransform.rotation, parentTransform);
     }
 
     void SetCountText()

@@ -19,4 +19,10 @@ public class EnemyMovement : MonoBehaviour
             navMeshAgent.SetDestination(player.position);
         }
     }
+
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Hit by explosion");
+        Destroy(gameObject);
+    }
 }

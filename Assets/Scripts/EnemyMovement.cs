@@ -25,4 +25,13 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log("Hit by explosion");
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

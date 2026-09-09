@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Header ("References")]
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI fuseText;
     public GameObject winTextObject;
     public GameObject doorObject;
     public GameObject door2Object;
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public float jumpForce = 5f;
     public float dashSpeed = 10f;
+    public int fuse = 3;
+    public float cooldownTime = 3.0f;
+    private float nextDashTime = 0f;
     private bool isGrounded;
 
     void Start()
@@ -38,7 +42,9 @@ public class PlayerController : MonoBehaviour
         SetCountText();
         winTextObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        fuseText.text = "Fuse: " + fuse.ToString();
     }
+   
     void OnMove(InputValue movementValue)
         {
             Vector2 movementVector = movementValue.Get<Vector2>();
@@ -56,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -74,9 +81,14 @@ public class PlayerController : MonoBehaviour
 
     void OnExplode()
     {
-        Debug.Log("BOOM");
-        audioSource.PlayOneShot(Boom);
-        Instantiate(Explosion, parentTransform.position, parentTransform.rotation, parentTransform);
+        if (fuse > 0)
+        {
+            Debug.Log("BOOM");
+            audioSource.PlayOneShot(Boom);
+            Instantiate(Explosion, parentTransform.position, parentTransform.rotation, parentTransform);
+            fuse --;
+            fuseText.text = "Fuse: " + fuse.ToString();
+        }
     }
 
     void SetCountText()
@@ -130,16 +142,13 @@ public class PlayerController : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             // Destroy the current object
             Destroy(gameObject);
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
-            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";            
         }
     }
 }
